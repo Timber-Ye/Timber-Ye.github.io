@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="../..">
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Structured 3D reconstruction in planar primitives with neural fields.">
+  <meta name="keywords" content="3D Reconstruction,3D Scene Understanding,Scene Abstraction,Neural Rendering">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- <script src="projects/neuralplane/static/js/video_comparison.js"></script> -->
+  <!-- <link itemprop="include" href="site-lib/html/custom-head-content-content.html"></div> -->
+
+</head>
+<body>
+<!-- <video class="video" id="xyalias6" loop playsinline autoplay muted src="./projects/neuralplane/assets/teaser-video.mp4" style="width: 80%; height: auto;" onplay="resizeAndPlay(this)"></video>
+<canvas height="0" class="videoMerge" id="xyalias6Merge"></canvas> -->
+
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<model-viewer style="height: 360px; width: 330px;"
+                  orientation="0deg 0deg 135deg"
+                  camera-controls
+                  alt="scene"
+                  src="projects/neuralplane/assets/scannetv2/gt-scene0084_00.glb"
+                  exposure="1.5"
+                  shadow-intensity="1"
+                  generate-schema>
+            <effect-composer render-mode="quality" msaa="8">
+              <color-grade-effect contrast="0.2" saturation="-1" opacity="1" blend-mode="default"></color-grade-effect>
+            </effect-composer>
+</model-viewer>
+
+</body>
+</html>
