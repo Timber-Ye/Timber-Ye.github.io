@@ -68,7 +68,7 @@
    * Keep the exported Home page aligned with the enabled Obsidian snippets.
    */
   body {
-    --homepage-document-width: 56em;
+    --homepage-document-width: 72em;
     --homepage-banner-icon-lift: -56px;
     --homepage-page-icon-lift: -72px;
     --homepage-portrait-top-offset: 2.55rem;
@@ -87,6 +87,23 @@
   .markdown-preview-sizer {
     max-width: var(--homepage-document-width) !important;
     font-family: "IBM Plex Sans", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+
+  /* The public homepage is a single-column site: remove exported panel shells too. */
+  #left-sidebar,
+  #right-sidebar,
+  #left-content:empty,
+  #right-content:empty {
+    display: none !important;
+  }
+
+  #main-horizontal,
+  #center-content {
+    width: 100%;
+  }
+
+  #center-content {
+    margin-inline: auto;
   }
 
   body #center-content > .obsidian-document > .markdown-preview-sizer {
