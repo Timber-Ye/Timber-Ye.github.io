@@ -75,6 +75,12 @@
     --file-line-width: var(--homepage-document-width);
   }
 
+  :root body {
+    --line-width: var(--homepage-document-width) !important;
+    --line-width-adaptive: var(--homepage-document-width) !important;
+    --file-line-width: var(--homepage-document-width) !important;
+  }
+
   body.homepage,
   .obsidian-document {
     --homepage-accent: #5c7bf5;
@@ -90,11 +96,15 @@
   }
 
   /* The public homepage is a single-column site: remove exported panel shells too. */
+  #left-content,
+  #right-content,
   #left-sidebar,
-  #right-sidebar,
-  #left-content:empty,
-  #right-content:empty {
+  #right-sidebar {
     display: none !important;
+    width: 0 !important;
+    min-width: 0 !important;
+    max-width: 0 !important;
+    flex: 0 0 0 !important;
   }
 
   #main-horizontal,
@@ -103,10 +113,20 @@
   }
 
   #center-content {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
     margin-inline: auto;
   }
 
+  body #center-content > .obsidian-document {
+    width: min(100%, var(--homepage-document-width)) !important;
+    max-width: var(--homepage-document-width) !important;
+    padding-inline: clamp(1rem, 3vw, 2rem) !important;
+  }
+
   body #center-content > .obsidian-document > .markdown-preview-sizer {
+    width: 100% !important;
+    max-width: var(--homepage-document-width) !important;
     flex-basis: auto !important;
     min-height: 0 !important;
     padding-bottom: 0 !important;
