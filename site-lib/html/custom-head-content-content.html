@@ -715,6 +715,21 @@
     font-weight: 760;
   }
 
+  .obsidian-document .pub-note,
+  .markdown-preview-sizer .pub-note {
+    display: inline-block;
+    margin-top: 0.08rem;
+    color: var(--text-muted);
+    font-size: 0.88rem;
+    line-height: 1.35;
+  }
+
+  .obsidian-document h2 + p:has(.pub-note),
+  .markdown-preview-sizer h2 + p:has(.pub-note) {
+    margin-top: -0.18rem;
+    margin-bottom: 0.95rem;
+  }
+
   .obsidian-document .news-date,
   .markdown-preview-sizer .news-date {
     border-color: rgba(247, 150, 70, var(--news-date-border-alpha, 0.34));
